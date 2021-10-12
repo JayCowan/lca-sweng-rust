@@ -40,8 +40,10 @@ impl<T:Ord> Tree<T> {
                 ref mut right,
             } => match val.cmp(value) {
                 Ordering::Less => left.find(val),
-            }
+                Ordering::Greater => right.find(val),
+                Ordering::Equal => return true,
+            },
+            Tree::Empty => return false,
         }
-
     }
 }
