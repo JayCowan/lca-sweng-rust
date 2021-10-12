@@ -1,10 +1,6 @@
 use std::option::Option;
 fn main() {
-    let _foo = Node::<isize>{
-        value: 0, 
-        left: Option::None, 
-        right: Option::None
-    };
+    
 }
 struct Node<T: Ord> {
     value: T,
