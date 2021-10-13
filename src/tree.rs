@@ -1,4 +1,5 @@
-enum Tree<T:Ord> {
+use std::cmp::{Ord, Ordering};
+pub(crate) enum Tree<T:Ord> {
     Node {
         value: T,
         left: Box<Tree<T>>,
@@ -13,12 +14,13 @@ impl<T:Ord> Tree<T> {
     pub fn create(val: T) -> Self {
         Tree::Node{
             value: val,
-            left: Box::new(Tree::Empty)
+            left: Box::new(Tree::Empty),
+            right: Box::new(Tree::Empty),
         }
     }
     pub fn insert(&mut self, val: T) {
         match self {
-            Tree::Leaf {
+            Tree::Node {
                 ref value,
                 ref mut left,
                 ref mut right,
@@ -32,9 +34,9 @@ impl<T:Ord> Tree<T> {
             }
         }
     }
-    pub fn find(&self, val: T) -> bool {
+    pub fn find(&mut self, val: T) -> bool {
         match self {
-            Tree::Leaf {
+            Tree::Node {
                 ref value,
                 ref mut left,
                 ref mut right,
