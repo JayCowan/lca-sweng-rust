@@ -1,4 +1,0 @@
-var searchIndex = JSON.parse('{\
-"lca_sweng_rust":{"doc":"","t":[5,0,0,13,13,4,11,11,11,11,11,11,11,11,11,11,11,11,11,12,12,12],"n":["main","tree","tree_tests","Empty","Node","Tree","borrow","borrow_mut","create","find","from","insert","into","lca","lca_internal","new","try_from","try_into","type_id","left","right","value"],"q":["lca_sweng_rust","","","lca_sweng_rust::tree","","","","","","","","","","","","","","","","lca_sweng_rust::tree::Tree","",""],"d":["","","","","","","","","","","","","","","","","","","","","",""],"i":[0,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2],"f":[[[]],null,null,null,null,null,[[]],[[]],[[]],[[],["bool",15]],[[]],[[]],[[]],[[]],[[]],[[]],[[],["result",4]],[[],["result",4]],[[],["typeid",3]],null,null,null],"p":[[4,"Tree"],[13,"Node"]]}\
-}');
-if (window.initSearch) {window.initSearch(searchIndex)};

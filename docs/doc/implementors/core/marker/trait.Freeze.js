@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["lca_sweng_rust"] = [{"text":"impl&lt;T&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.55.0/core/marker/trait.Freeze.html\" title=\"trait core::marker::Freeze\">Freeze</a> for <a class=\"enum\" href=\"lca_sweng_rust/tree/enum.Tree.html\" title=\"enum lca_sweng_rust::tree::Tree\">Tree</a>&lt;T&gt; <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.55.0/core/marker/trait.Freeze.html\" title=\"trait core::marker::Freeze\">Freeze</a>,&nbsp;</span>","synthetic":true,"types":["lca_sweng_rust::tree::Tree"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
