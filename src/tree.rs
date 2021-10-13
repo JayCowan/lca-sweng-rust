@@ -53,49 +53,27 @@ impl<T:Ord + Copy> Tree<T> {
         match self {
             Tree::Node {
                 value,
-                ref left,
-                right:_,
-            } if left.find(val1) => {
-                if left.find(val2) {
-                    return left.lca(val1, val2);
-                } else {
-                    return *value;
-                }
-            }, 
-            Tree::Node {
-                value,
-                ref left,
-                right: _,
-            } if left.find(val2) => {
+                ref mut left,
+                ref mut right,
+            } => {
                 if left.find(val1) {
-                    return left.lca(val1, val2);
-                } else {
-                    return *value;
-                }
+                    if left.find(val2) {
+                        return left.lca(val1, val2);
+                    } else {return *value}
+                } else if left.find(val2) {
+                    if left.find(val1) {
+                        return left.lca(val1, val2);
+                    } else {return *value}
+                } else if right.find(val1) {
+                    if right.find(val2) {
+                        return right.lca(val1, val2);
+                    } else {return *value}
+                } else if right.find(val2) {
+                    if right.find(val1) {
+                        return right.lca(val1, val2);
+                    } else {return *value}
+                } else {panic!("the values arent in the tree!")}
             },
-            Tree::Node { 
-                value, 
-                left: _, 
-                ref right 
-            } if right.find(val1) => {
-                if right.find(val2) {
-                    return right.lca(val1, val2);
-                } else {
-                    return *value;
-                }
-            },
-            Tree::Node { 
-                value, 
-                left: _, 
-                ref right, 
-            } if right.find(val2) => {
-                if right.find(val1) {
-                    return right.lca(val1, val2);
-                } else {
-                    return *value;
-                }
-            },
-            Tree::Node {value:_, left: _, right:_,} => panic!("cant find either value in the tree!"),
             Tree::Empty => panic!("encountered empty node!"),
         }
     }
