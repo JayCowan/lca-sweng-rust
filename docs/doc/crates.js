@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["lca_sweng_rust"];
